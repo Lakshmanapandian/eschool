@@ -1,0 +1,83 @@
+<nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #357cb9 !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">E-School</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLeftAlignExample" aria-controls="navbarLeftAlignExample" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="role !== null && role !== undefined">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="role == '1'">
+          <a class="nav-link" routerLink="/create-class">Create Class</a>
+        </li>
+        <li class="nav-item" *ngIf="role == '0' || role == '1'">
+          <a class="nav-link" routerLink="/join-class">Join Class</a>
+        </li>
+        <li class="nav-item" *ngIf="role == '1'">
+          <a class="nav-link" routerLink="/upload">Upload Video</a>
+        </li>
+        <li class="nav-item" *ngIf="role !== null && role !== undefined">
+          <a class="nav-link" routerLink="/videos">View Videos</a>
+        </li>
+        <li class="nav-item" *ngIf="role !== null && role !== undefined">
+          <a class="nav-link" routerLink="/change-password">Change Password</a>
+        </li>
+        <li class="nav-item" *ngIf="role === '0'">
+          <a class="nav-link" routerLink="/pricing">Subscription Plans</a>
+        </li>
+        <!-- <li class="nav-item" *ngIf="role === '0'">
+          <a class="nav-link" routerLink="/student/transactions">Transactions</a>
+        </li> -->
+        <!-- <li class="nav-item" *ngIf="role === '2'">
+          <a class="nav-link" routerLink="/admin/broadcast">Stream Video</a>
+        </li> -->
+        <!-- <li class="nav-item" *ngIf="role == '2'">
+          <a class="nav-link" routerLink="/admin/live">Join Class</a>
+        </li> -->
+        <li class="nav-item" *ngIf="role == '2'">
+          <a class="nav-link" routerLink="/add-user">Add User</a>
+        </li>
+        <li class="nav-item" *ngIf="role == '2'">
+          <a class="nav-link" routerLink="/view-users">View Users</a>
+        </li>
+        <li class="nav-item" *ngIf="role == '2'">
+          <a class="nav-link" routerLink="/view-orders">View Orders</a>
+        </li>
+        <li class="nav-item" *ngIf="role === null || role === undefined">
+          <a class="nav-link" routerLink="/pricing">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us">Contact-Us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+        </li>
+        <!-- <li class="nav-item" *ngIf="role == '0'">
+          <a class="nav-link" routerLink="/student/cart">
+            <mdb-icon fas icon="shopping-cart"></mdb-icon>
+          </a>
+        </li> -->
+        <li class="nav-item" *ngIf="role != undefined">
+          <a class="nav-link" (click)="logout" routerLink="/logout">
+            <mdb-icon fas icon="sign-out-alt"></mdb-icon>
+          </a>
+        </li>
+      </ul>
+      <!-- <li class="nav-item" *ngFor="let tab in tabs">
+        <a class="nav-link" routerLink="{{tab.link}}">{{tab.name}}</a>
+      </li>
+    </ul> -->
+    </div>
+  </div>
+</nav>
